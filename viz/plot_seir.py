@@ -1,9 +1,24 @@
 import matplotlib.pyplot as plt
+from matplotlib.figure import Figure
+import numpy as np
 
 
-def plot_results(infected):
-    """Plots the time series of infected cases."""
-    
+def plot_results(
+        infected: np.ndarray
+) -> Figure:
+    """Plots the time series of infected cases.
+
+    Parameters
+    ----------
+    infected : numpy array of floats
+        The number of people that are infected as a float.
+
+        
+    Returns
+    -------
+    matplot figure class instance
+
+    """
     fig, ax = plt.subplots(1, 1, figsize=(10, 6))
     ax.plot(infected, color='#AA0000', linestyle='dashed', marker='o')
     ax.set_xlabel('Day', fontsize=16)
